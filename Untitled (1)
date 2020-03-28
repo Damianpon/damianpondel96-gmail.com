@@ -1,0 +1,16 @@
+first_name = "JAN"
+last_name = "KoWalski"
+b_year = 1950
+profession = "Hydraulik"
+
+result = ""
+
+expected = """
+imie i nazwisko: Jan Kowalski
+=============================
+rok urodzenia:      1950
+zawód:              hydraulik
+"""
+
+assert result == expected
+
