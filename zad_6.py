@@ -1,4 +1,5 @@
 x = int(input("Podaj liczbę: "))
-print(float(x)>10)
-print(float(x)<=15)
-print(float(x) %2 ==0)
+print()
+print(f"Liczba większa od 10:", float(x)>10)
+print(f"Liczba jest mniejsza lub równa 15:", float(x)<=15)
+print(f"Liczba jest podzielona przez 2:", float(x) %2 ==0)
