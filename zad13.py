@@ -1,7 +1,9 @@
-i = 1
-while True:
-    print(input(f"Podaj tempereturę w dniu {i}: "))
-    i += 1
-    if i == 8:
-        break
+x = 7
+temperatura = 0
 
+while x > 0:
+    t = int(input("Wprowadź temperaturę: "))
+    x = x - 1
+    temperatura += t
+
+print(f"Średnia: {temperatura/7}")
