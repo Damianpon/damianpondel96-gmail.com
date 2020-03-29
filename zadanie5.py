@@ -1,9 +1,9 @@
-cityA = str(input("Podaj nazwę miasta A: "))
-cityB = str(input("Podaj nazwę miasta B: "))
+city_a = str(input("Podaj nazwę miasta A: "))
+city_b = str(input("Podaj nazwę miasta B: "))
 distance = float(input("Podaj dystans pomiędzy miastami w kilometrach: "))
-fuelConsumption = float(input("Podaj ilość spalonej benzyny nas 100 km: "))
-fuelCost = float(input("Podaj koszt benzyny na kilometr: "))
+fuel_consumption = float(input("Podaj ilość spalonej benzyny nas 100 km: "))
+fuel_cost = float(input("Podaj koszt benzyny na kilometr: "))
 
-x = int(fuelConsumption * fuelCost * (distance / 100))
+x = int(fuel_consumption * fuel_cost * (distance / 100))
 
-print(f"Koszt przejazdu między {cityA} a {cityB} to {x} zł.")
+print(f"Koszt przejazdu między {city_a} a {city_b} to {x} zł.")
