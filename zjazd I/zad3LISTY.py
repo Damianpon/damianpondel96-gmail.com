@@ -7,5 +7,5 @@ for element in dane:
     else:
         liczba_ujem = liczba_ujem + 1
 
-print("ile jes liczb dodatnich:", liczba_dod)
-print("ile jest liczb ujemnych:", liczba_ujem)
+print("Ile jest liczb dodatnich?", liczba_dod)
+print("Ile jest liczb ujemnych?", liczba_ujem)
