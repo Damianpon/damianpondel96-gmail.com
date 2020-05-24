@@ -10,7 +10,7 @@ for k in range(1, x):
     reverselenght = len(listA1)
     for y in range(1, x, -1):
         listA.append(y)
-        lengthOfTheLastOne = len(listA)
+        lengthOfTheLastOne = len(listA)\
     lengthOfTheLastOne = 0
 reverselenght = x
 
@@ -26,3 +26,19 @@ for z in range(x):
 
 print(listA1)
 print(listA)
+
+
+dlugosc = 55
+
+i = 0
+y = 0
+
+for i in range(dlugosc):
+    print(" " * (dlugosc - i - 1) + "/" + 2 * i * " " + "\\")
+    i += 1
+for y in range(dlugosc):
+    print(" " * y + "\\" + (" " * ((2 * dlugosc - 2)) + "/"))
+    y += 1
+    dlugosc -= 1
+
+

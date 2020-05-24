@@ -7,3 +7,5 @@ lengthOfTheLastOne = len(listA)
 for y in range(lengthOfTheLastOne):
     print("*" + " " * y + "*")
 print("*" * length)
+
+print(lengthOfTheLastOne)

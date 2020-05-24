@@ -1,34 +1,50 @@
-class CashMashine:
-    def __init__(self, lista):
-        self.lista = lista
+class CashMachine:
 
-        self.lista = list(lista)
+    def __init__(self):
+        self.__money = []
 
     @property
-    def is_available(self):
-        if len(self.lista) > 0:
-            return True
-        else:
-            return False
+    def cash_is_available(self):
+        return len(self.__money) > 0
 
-    def put_money(self, money):
-        money = list(money)
-        for i in money:
-            self.lista.append(i)
+    def put_money_into(self, bills):
+        self.__money += bills
 
-        return lista
+    def withdraw_money(self, amount):
+        to_withdraw = []
+
+        for bill in sorted(self.__money, reverse=True):
+            if sum(to_withdraw) + bill <= amount:
+                to_withdraw.append(bill)
+
+            if sum(to_withdraw) == amount:
+                for bill in to_withdraw:
+                    self.__money.remove(bill)
+                return to_withdraw
+
+
+
+
 
 
 
 class TestCashMashine:
-    def test_init(self):
-        cash_mashine = CashMashine([])
-        assert cash_mashine
-    def test_cash_is_available(self):
-        cash_mashine = CashMashine([])
-        assert cash_mashine.is_available == False
-    def test_put_money(self):
-        cash_mashine = CashMashine([200, 100, 100, 50])
-        assert cash_mashine.put_money([200, 100, 100, 50]) == [200, 100, 100, 50]
 
-    #[200, 100, 100, 50]
+    def test_init(self):
+        cash_machine = CashMachine()
+        assert cash_machine
+
+    def test_is_money_there(self):
+        cash_machine = CashMachine()
+        assert cash_machine.cash_is_available == False
+
+
+    def test_put_money(self):
+        cash_machine = CashMachine()
+        cash_machine.put_money_into([200, 100, 100, 50])
+        assert cash_machine.cash_is_available == True
+
+    def test_withdraw(self):
+        cash_machine = CashMachine()
+        cash_machine.put_money_into([200, 100, 100, 50])
+        assert cash_machine.withdraw_money(150) == [100, 50]

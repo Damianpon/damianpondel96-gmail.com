@@ -24,24 +24,27 @@ def sklep_spozywczy():
                     lista_zakupow[produkt] = (ile * b)
                     koszt.append(ile * b)
                     magazyn[produkt] = magazyn[produkt] - ile
-                    print(f"Za {ile} kg {produkt} zapłacisz {ile * b:2f} złotych.")
-                    print("********")
-                    print(sum(map(float,koszt)))
+                    print(f"Za {ile} kg {produkt} zapłacisz {ile * b:.2f} złotych.")
                 else:
                     print("Niestety nie mamy wystarczająco. Ile podać?")
                     ile = float(input("Podaj: "))
                     lista_zakupow[produkt] = (ile * b)
                     magazyn[produkt] = magazyn[produkt] - ile
                     koszt.append(ile * b)
-                    print(f"Za {ile} kg {produkt} zapłacisz {ile * b:2f} złotych.")
+                    print(f"Za {ile} kg {produkt} zapłacisz {ile * b:.2f} złotych.")
         elif komenda == "p":
             suma = sum(koszt)
-            print(f"Za wszystkie produkty zapłacisz {suma} złotych.")
+            print(f"Za wszystkie produkty zapłacisz {suma:.2f} złotych.")
             print("Tu masz paragon:")
             for itemy in lista_zakupow.items():
                 c, d = itemy
-                print(f"{c}, {d} zł")
-                print("Suma", suma, "zł.")
+                print(f"{c}, {d:.2f} zł")
+            print(f"Suma {suma:.2f} zł.")
+        elif komenda == "z":
+            return  "Dziękujemy za zakupy, zapraszamy ponownie!"
+        else:
+            print("Wpisz poprawną komendę!")
+
 
 
 print(sklep_spozywczy())
